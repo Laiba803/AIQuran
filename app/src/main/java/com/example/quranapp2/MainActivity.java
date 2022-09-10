@@ -60,34 +60,37 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
-//                        intent = new Intent(MainActivity.this, Urdu.class);
-//                        intent.putExtra("required","Arabic_Text");
-//                        startActivity(intent);
+                        intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.nav_FUrdu:
-//                        intent = new Intent(MainActivity.this, Urdu.class);
-//                        intent.putExtra("required","Fateh_Muhammad_Jalandhri");
-//                        startActivity(intent);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.nav_FEng:
-//                        intent = new Intent(MainActivity.this, Urdu.class);
-//                        intent.putExtra("required","Mehmood_ul_Hassan");
-//                        startActivity(intent);
+                        intent = new Intent(MainActivity.this, SurahNames.class);
+                        intent.putExtra("required","Fateh_Muhammad_Jalandhri");
+                        intent.putExtra("language" ,"urdu");
+                        startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.nav_MUrdu:
-//                        intent = new Intent(MainActivity.this, English.class);
-//                        intent.putExtra("required","Dr_Mohsin_Khan");
-//                        startActivity(intent);
+                        intent = new Intent(MainActivity.this, SurahNames.class);
+                        intent.putExtra("required","mehmood_ul_hassan");
+                        intent.putExtra("language" ,"urdu");
+                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_DEng:
+                        intent = new Intent(MainActivity.this, SurahNames.class);
+                        intent.putExtra("required","Dr_Mohsin_Khan");
+                        intent.putExtra("language" ,"english");
+                        startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.nav_MEng:
-//                        intent = new Intent(MainActivity.this, English.class);
-//                        intent.putExtra("required","Mufti_Taqi_Usmani");
-//                        startActivity(intent);
-//                        drawerLayout.closeDrawer(GravityCompat.START);
+                        intent = new Intent(MainActivity.this, SurahNames.class);
+                        intent.putExtra("required","Mufti_Taqi_Usmani");
+                        intent.putExtra("language" ,"english");
+                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
 

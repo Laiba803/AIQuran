@@ -9,28 +9,28 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Home" />
     </group>
-    <item android:title="@string/translation_by_fateh_muhammad_jalandhri">
+    <item android:title="@string/surah_names_in_urdu">
         <menu>
             <item
                 android:id="@+id/nav_FUrdu"
                 android:icon="@drawable/quranicon"
-                android:title="@string/surah_names_in_urdu" />
-            <item
-                android:id="@+id/nav_FEng"
-                android:icon="@drawable/quranicon"
-                android:title="@string/surah_names_in_english" />
-        </menu>
-    </item>
-    <item android:title="@string/translation_by_mehmood_ul_hassan">
-        <menu>
+                android:title="@string/translation_by_fateh_muhammad_jalandhri" />
             <item
                 android:id="@+id/nav_MUrdu"
                 android:icon="@drawable/quranicon"
-                android:title="@string/surah_names_in_urdu2" />
+                android:title="@string/translation_by_mehmood_ul_hassan" />
+        </menu>
+    </item>
+    <item android:title="@string/surah_names_in_english">
+        <menu>
+            <item
+                android:id="@+id/nav_DEng"
+                android:icon="@drawable/quranicon"
+                android:title="@string/translation_by_Dr_Mohsin_Khan" />
             <item
                 android:id="@+id/nav_MEng"
                 android:icon="@drawable/quranicon"
-                android:title="@string/surah_names_in_english2" />
+                android:title="@string/translation_by_Mufti_Taqi_Usmani" />
         </menu>
     </item>
 </menu>

@@ -10,12 +10,12 @@
     <string name="menu_home">AI Quran</string>
     <string name="menu_gallery">Parah Names</string>
     <string name="menu_slideshow">Surah Introduction</string>
-    <string name="translation_by_fateh_muhammad_jalandhri">Translation by Fateh Muhammad Jalandhri</string>
-    <string name="surah_names_in_urdu">Surah Names In Urdu</string>
-    <string name="surah_names_in_english">Surah Names In English</string>
-    <string name="translation_by_mehmood_ul_hassan">Translation by Mehmood ul Hassan</string>
-    <string name="surah_names_in_urdu2">Surah Names In Urdu</string>
-    <string name="surah_names_in_english2">Surah Names In English</string>
+    <string name="translation_by_fateh_muhammad_jalandhri">By Fateh Muhammad Jalandhri</string>
+    <string name="translation_by_mehmood_ul_hassan">By Mehmood ul Hassan</string>
+    <string name="translation_by_Dr_Mohsin_Khan">By Dr Mohsin Khan</string>
+    <string name="translation_by_Mufti_Taqi_Usmani">By Mufti Taqi Usmani</string>
+    <string name="surah_names_in_urdu">Translation In Urdu</string>
+    <string name="surah_names_in_english">Translation In English</string>
     <string name="open">Openning</string>
     <string name="close">Closing</string>
 </resources>

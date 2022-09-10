@@ -565,11 +565,11 @@ public class QDH {
         return surahAyatCount[surahNumber];
     }
 
-    public List<String> GetSurahNames() {
-        List<String> list = null;
-        for (int index = 0; index < urduSurahNames.length; ++index)
-            list.add(urduSurahNames[index]);
-        return list;
+    public String[] GetUrduSurahNames() {
+        return urduSurahNames;
+    }
+    public String[] GetEngSurahNames() {
+        return englishSurahNames;
     }
 
     public int getSurahStart(int surahNumber) {

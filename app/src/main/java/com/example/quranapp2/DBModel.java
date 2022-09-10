@@ -12,7 +12,20 @@ public class DBModel {
     int RakuID;
     int PRakuID;
     int ParaID;
-    String TRIAL365;
+
+    public DBModel(int ayaId, int suraId, int ayaNo, String arabicText, String fateh_Muhammad_Jalandhri, String mehmood_ul_Hassan, String dr_Mohsin_Khan, String mufti_Taqi_Usmani, int rakuID, int PRakuID, int paraID) {
+        AyaId = ayaId;
+        SuraId = suraId;
+        AyaNo = ayaNo;
+        ArabicText = arabicText;
+        Fateh_Muhammad_Jalandhri = fateh_Muhammad_Jalandhri;
+        Mehmood_ul_Hassan = mehmood_ul_Hassan;
+        Dr_Mohsin_Khan = dr_Mohsin_Khan;
+        Mufti_Taqi_Usmani = mufti_Taqi_Usmani;
+        RakuID = rakuID;
+        this.PRakuID = PRakuID;
+        ParaID = paraID;
+    }
 
     @Override
     public String toString() {
@@ -28,7 +41,6 @@ public class DBModel {
                 ", RakuID=" + RakuID +
                 ", PRakuID=" + PRakuID +
                 ", ParaID=" + ParaID +
-                ", TRIAL365='" + TRIAL365 + '\'' +
                 '}';
     }
 
@@ -118,28 +130,5 @@ public class DBModel {
 
     public void setParaID(int paraID) {
         ParaID = paraID;
-    }
-
-    public String getTRIAL365() {
-        return TRIAL365;
-    }
-
-    public void setTRIAL365(String TRIAL365) {
-        this.TRIAL365 = TRIAL365;
-    }
-
-    public DBModel(int ayaId, int suraId, int ayaNo, String arabicText, String fateh_Muhammad_Jalandhri, String mehmood_ul_Hassan, String dr_Mohsin_Khan, String mufti_Taqi_Usmani, int rakuID, int PRakuID, int paraID, String TRIAL365) {
-        AyaId = ayaId;
-        SuraId = suraId;
-        AyaNo = ayaNo;
-        ArabicText = arabicText;
-        Fateh_Muhammad_Jalandhri = fateh_Muhammad_Jalandhri;
-        Mehmood_ul_Hassan = mehmood_ul_Hassan;
-        Dr_Mohsin_Khan = dr_Mohsin_Khan;
-        Mufti_Taqi_Usmani = mufti_Taqi_Usmani;
-        RakuID = rakuID;
-        this.PRakuID = PRakuID;
-        ParaID = paraID;
-        this.TRIAL365 = TRIAL365;
     }
 }
