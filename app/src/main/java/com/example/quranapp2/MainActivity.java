@@ -1,65 +1,100 @@
 package com.example.quranapp2;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
-
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.quranapp2.databinding.ActivityMainBinding;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
+    NavigationView navigationView;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
+    ActionBarDrawerToggle toggle;
+    TextView data;
+    Intent intent;
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            Toast.makeText(getApplicationContext(), "Start", Toast.LENGTH_LONG).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), "End", Toast.LENGTH_LONG).show();
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //data=findViewById(R.id.textviewdata);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,R.id.nav_slideshow)
-                .setOpenableLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-    }
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawer_layout);
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        drawerLayout.openDrawer(GravityCompat.START);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_home:
+//                        intent = new Intent(MainActivity.this, Urdu.class);
+//                        intent.putExtra("required","Arabic_Text");
+//                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_FUrdu:
+//                        intent = new Intent(MainActivity.this, Urdu.class);
+//                        intent.putExtra("required","Fateh_Muhammad_Jalandhri");
+//                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_FEng:
+//                        intent = new Intent(MainActivity.this, Urdu.class);
+//                        intent.putExtra("required","Mehmood_ul_Hassan");
+//                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_MUrdu:
+//                        intent = new Intent(MainActivity.this, English.class);
+//                        intent.putExtra("required","Dr_Mohsin_Khan");
+//                        startActivity(intent);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_MEng:
+//                        intent = new Intent(MainActivity.this, English.class);
+//                        intent.putExtra("required","Mufti_Taqi_Usmani");
+//                        startActivity(intent);
+//                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+
     }
 }
